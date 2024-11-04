@@ -31,6 +31,12 @@ ipcMain.on('ipc-example', async (event, arg) => {
   event.reply('ipc-example', msgTemplate('pong'));
 });
 
+ipcMain.on('toggle-connection-manager', () => {
+  if (mainWindow) {
+    mainWindow.webContents.send('toggle-connection-manager');
+  }
+});
+
 if (process.env.NODE_ENV === 'production') {
   const sourceMapSupport = require('source-map-support');
   sourceMapSupport.install();

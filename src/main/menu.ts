@@ -165,8 +165,9 @@ export default class MenuBuilder {
         {
           label: 'Connection Manager',
           click: () => {
-            // TODO: 实现连接管理功能
-            console.log('Nuwa Connection Manager');
+            if (this.mainWindow) {
+              this.mainWindow.webContents.send('toggle-connection-manager');
+            }
           },
         },
       ],
@@ -286,8 +287,9 @@ export default class MenuBuilder {
           {
             label: 'Connection Manager',
             click: () => {
-              // TODO: 实现连接管理功能
-              console.log('Nuwa Connection Manager');
+              if (this.mainWindow) {
+                this.mainWindow.webContents.send('toggle-connection-manager');
+              }
             },
           },
         ],
