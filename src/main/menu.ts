@@ -151,6 +151,26 @@ export default class MenuBuilder {
         { label: 'Bring All to Front', selector: 'arrangeInFront:' },
       ],
     };
+    const subMenuNuwa: MenuItemConstructorOptions = {
+      label: 'Nuwa Connection',
+      submenu: [
+        {
+          label: 'New Connection',
+          accelerator: 'Command+Shift+N',
+          click: () => {
+            // TODO: 实现Nuwa连接功能
+            console.log('New Nuwa Connection');
+          },
+        },
+        {
+          label: 'Connection Manager',
+          click: () => {
+            // TODO: 实现连接管理功能
+            console.log('Nuwa Connection Manager');
+          },
+        },
+      ],
+    };
     const subMenuHelp: MenuItemConstructorOptions = {
       label: 'Help',
       submenu: [
@@ -189,7 +209,7 @@ export default class MenuBuilder {
         ? subMenuViewDev
         : subMenuViewProd;
 
-    return [subMenuAbout, subMenuEdit, subMenuView, subMenuWindow, subMenuHelp];
+    return [subMenuAbout, subMenuEdit, subMenuView, subMenuWindow, subMenuNuwa, subMenuHelp];
   }
 
   buildDefaultTemplate() {
@@ -253,6 +273,26 @@ export default class MenuBuilder {
               ],
       },
       {
+        label: 'Nuwa Connection',
+        submenu: [
+          {
+            label: 'New Connection',
+            accelerator: 'Ctrl+Shift+N',
+            click: () => {
+              // TODO: 实现Nuwa连接功能
+              console.log('New Nuwa Connection');
+            },
+          },
+          {
+            label: 'Connection Manager',
+            click: () => {
+              // TODO: 实现连接管理功能
+              console.log('Nuwa Connection Manager');
+            },
+          },
+        ],
+      },
+      {
         label: 'Help',
         submenu: [
           {
@@ -288,3 +328,4 @@ export default class MenuBuilder {
     return templateDefault;
   }
 }
+
